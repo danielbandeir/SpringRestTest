@@ -27,5 +27,10 @@ class personRegisterController {
 	List<personRegister> all(){
 		return repository.findAll();
 	}
+	
+	@PostMapping("/person")
+	personRegister newPerson(@RequestBody personRegister newPerson) {
+		return repository.save(newPerson);
+	}
 
 }
