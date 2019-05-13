@@ -1,4 +1,4 @@
-package com.spring.rest;
+package com.spring.rest.models;
 
 import lombok.Data;
 
