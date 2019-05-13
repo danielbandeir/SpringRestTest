@@ -1,7 +1,7 @@
 package com.spring.rest.models;
 
 import lombok.Data;
-
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -11,25 +11,27 @@ import javax.persistence.Id;
 @Entity
 public class deviceRegister{
 	
-	private String clientVersion;
+	@Id @GeneratedValue
+	private Long id;
+	private String clientversion;
 	private String timeStamp;
+	@Embedded
 	private Device device;
-	private Location location;
 	
 	deviceRegister(){}
 	
-	deviceRegister(String clientVersion, String timeStamp, Device device, Location location){
-		this.clientVersion = clientVersion;
+	deviceRegister(String clientVersion, String timeStamp, Device device){
+		this.clientversion = clientVersion;
 		this.timeStamp = timeStamp;
 		this.device = device;
-		this.location = location;
 	}
 }
 
 
 
+@Data
 class Device{
-	private String deviceBrand;
+	private String devicebrand;
 	private String devicemodel;
 	private String systype;
 	private String sysversion;
@@ -37,23 +39,9 @@ class Device{
 	Device (){}
 	
 	Device(String deviceBrand, String deviceModel, String systype, String sysversion){
-		this.deviceBrand = deviceBrand;
+		this.devicebrand = deviceBrand;
 		this.devicemodel = deviceModel;
 		this.systype = systype;
 		this.sysversion = sysversion;
-	}
-}
-
-
-
-class Location{
-	private String longi;
-	private String lat;
-	
-	Location(){}
-	
-	Location(String longi, String lat){
-		this.lat = lat;
-		this.longi = longi;
 	}
 }
