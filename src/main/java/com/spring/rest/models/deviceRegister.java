@@ -17,13 +17,16 @@ public class deviceRegister{
 	private String timeStamp;
 	@Embedded
 	private Device device;
+	@Embedded
+	private Location location;
 	
 	deviceRegister(){}
 	
-	deviceRegister(String clientVersion, String timeStamp, Device device){
+	deviceRegister(String clientVersion, String timeStamp, Device device, Location local){
 		this.clientversion = clientVersion;
 		this.timeStamp = timeStamp;
 		this.device = device;
+		this.location = local;
 	}
 }
 
@@ -31,6 +34,7 @@ public class deviceRegister{
 
 @Data
 class Device{
+	private String deviceid;
 	private String devicebrand;
 	private String devicemodel;
 	private String systype;
@@ -38,10 +42,25 @@ class Device{
 	
 	Device (){}
 	
-	Device(String deviceBrand, String deviceModel, String systype, String sysversion){
+	Device(String id, String deviceBrand, String deviceModel, String systype, String sysversion){
+		this.deviceid = id;
 		this.devicebrand = deviceBrand;
 		this.devicemodel = deviceModel;
 		this.systype = systype;
 		this.sysversion = sysversion;
+	}
+}
+
+
+@Data
+class Location{
+	private String lat;
+	private String longi;
+	
+	Location(){}
+	
+	Location(String lat, String longi){
+		this.lat = lat;
+		this.longi = longi;
 	}
 }
