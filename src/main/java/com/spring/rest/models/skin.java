@@ -5,7 +5,9 @@ import lombok.Data;
 import javax.persistence.Id;
 
 import java.util.List;
+import java.lang.String;
 
+import javax.persistence.ElementCollection;
 import javax.persistence.Embedded;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Entity;
@@ -24,18 +26,20 @@ public class skin {
 	
 }
 
+@Data
 class Partner{
-	private String id;
+	private String partnerid;
 	private String lang;
 	
 	Partner(){}
 	
 	Partner(String id, String lang){
-		this.id = id;
+		this.partnerid = id;
 		this.lang = lang;
 	}
 }
 
+@Data
 class Skin{
 	private String lastUpdated;
 	private String name;
@@ -59,6 +63,7 @@ class Skin{
 	}
 }
 
+@Data
 class Images{
 	private String splash;
 	private String bgMain;
@@ -73,23 +78,41 @@ class Images{
 	}
 }
 
+@Data
 class Colors{
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgMain;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgChat;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgLogin;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgWall;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgPeople;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgDashboard;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgVoucher;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgPermission;
+	@ElementCollection(targetClass=String.class)
 	private List<String> bgRegister;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonFb;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonGoogle;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonTwitter;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonInstagram;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonLinkedin;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonSelected;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonEnabled;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonDisabled;
 	
 	Colors(){}
@@ -132,16 +155,27 @@ class Colors{
 	
 }
 
+@Data
 class Fonts{
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonSelected;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonEnabled;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonDisabled;
+	@ElementCollection(targetClass=String.class)
 	private List<String> textFriends;
+	@ElementCollection(targetClass=String.class)
 	private List<String> textHighlight;
+	@ElementCollection(targetClass=String.class)
 	private List<String> textTitle;
+	@ElementCollection(targetClass=String.class)
 	private List<String> textSubtitle;
+	@ElementCollection(targetClass=String.class)
 	private List<String> textNormal;
+	@ElementCollection(targetClass=String.class)
 	private List<String> textSmall;
+	@ElementCollection(targetClass=String.class)
 	private List<String> textTiny;
 	
 	Fonts(){}
