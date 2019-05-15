@@ -26,7 +26,11 @@ class skinController {
 	List<skin> all(){
 		return repository.findAll();
 	}
-	
 
+	@PostMapping()
+	skin newSkin(@RequestBody skin newSkin) {
+		return repository.save(newSkin);
+	}
+	
 }
 
