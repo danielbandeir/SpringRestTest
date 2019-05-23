@@ -35,6 +35,7 @@ public class deviceRegister{
 @Data
 class Device{
 	private String deviceid;
+	
 	private String devicebrand;
 	private String devicemodel;
 	private String systype;
