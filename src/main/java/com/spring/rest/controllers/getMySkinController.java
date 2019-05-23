@@ -1,6 +1,8 @@
 package com.spring.rest.controllers;
 
 import java.util.List;
+import java.util.Optional;
+
 import com.spring.rest.models.getMySkin;
 import com.spring.rest.repository.getMySkinRepository;
 import com.spring.rest.models.skin;
@@ -16,9 +18,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/getMySkin")
 public class getMySkinController {
 	private final getMySkinRepository repository;
+	private final skinRepository repositorySkin;
 	
-	getMySkinController(getMySkinRepository repository){
+	getMySkinController(getMySkinRepository repository, skinRepository repositorySkin){
 		this.repository = repository;
+		this.repositorySkin = repositorySkin;
 	}
 	
 	@GetMapping
@@ -27,8 +31,8 @@ public class getMySkinController {
 	}
 	
 	@PostMapping
-	String newSkin(@RequestBody getMySkin newSkin) {
+	Optional<skin> newSkin(@RequestBody getMySkin newSkin) {
 		repository.save(newSkin);
-		return "Ok, registrado";
+		return repositorySkin.findById((long) 1);
 	}
 }
