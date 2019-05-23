@@ -35,4 +35,5 @@ public class getMySkinController {
 		repository.save(newSkin);
 		return repositorySkin.findById((long) 1);
 	}
+
 }
