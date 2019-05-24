@@ -99,6 +99,8 @@ class Colors{
 	@ElementCollection(targetClass=String.class)
 	private List<String> bgRegister;
 	@ElementCollection(targetClass=String.class)
+	private List<String> bgError;
+	@ElementCollection(targetClass=String.class)
 	private List<String> buttonFb;
 	@ElementCollection(targetClass=String.class)
 	private List<String> buttonGoogle;
@@ -114,6 +116,8 @@ class Colors{
 	private List<String> buttonEnabled;
 	@ElementCollection(targetClass=String.class)
 	private List<String> buttonDisabled;
+	@ElementCollection(targetClass=String.class)
+	private List<String> buttonError;
 	
 	Colors(){}
 	
@@ -126,6 +130,7 @@ class Colors{
 			List<String> bgVoucher,
 			List<String> bgPermission,
 			List<String> bgRegister,
+			List<String> bgError,
 			List<String> buttonFb,
 			List<String> buttonGoogle,
 			List<String> buttonTwitter,
@@ -133,7 +138,8 @@ class Colors{
 			List<String> buttonLinkedin,
 			List<String> buttonSelected,
 			List<String> buttonEnabled,
-			List<String> buttonDisabled){
+			List<String> buttonDisabled,
+			List<String> buttonError){
 		this.bgMain = bgMain;
 		this.bgChat = bgChat;
 		this.bgLogin = bgLogin;
@@ -143,6 +149,7 @@ class Colors{
 		this.bgVoucher = bgVoucher;
 		this.bgPermission = bgPermission;
 		this.bgRegister = bgRegister;
+		this.bgError = bgError;
 		this.buttonFb = buttonFb;
 		this.buttonGoogle = buttonGoogle;
 		this.buttonTwitter = buttonTwitter;
@@ -151,6 +158,7 @@ class Colors{
 		this.buttonSelected = buttonSelected;
 		this.buttonEnabled = buttonEnabled;
 		this.buttonDisabled = buttonDisabled;
+		this.buttonError = buttonError;
 	}
 	
 }
@@ -163,6 +171,8 @@ class Fonts{
 	private List<String> buttonEnabled;
 	@ElementCollection(targetClass=String.class)
 	private List<String> buttonDisabled;
+	@ElementCollection(targetClass=String.class)
+	private List<String> textError;
 	@ElementCollection(targetClass=String.class)
 	private List<String> textFriends;
 	@ElementCollection(targetClass=String.class)
@@ -183,6 +193,7 @@ class Fonts{
 	Fonts(List<String> buttonSelected, 
 		  List<String> buttonEnabled,
 		  List<String> buttonDisabled,
+		  List<String> textError,
 		  List<String> textFriends,
 		  List<String> textHighlight,
 		  List<String> textTitle,
@@ -193,6 +204,7 @@ class Fonts{
 		this.buttonSelected = buttonSelected;
 		this.buttonEnabled = buttonEnabled;
 		this.buttonDisabled = buttonDisabled;
+		this.textError = textError;
 		this.textFriends = textFriends;
 		this.textHighlight = textHighlight;
 		this.textTitle = textTitle;
