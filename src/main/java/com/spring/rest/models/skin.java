@@ -4,6 +4,8 @@ import lombok.Data;
 
 import javax.persistence.Id;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 import java.lang.String;
 
@@ -111,11 +113,14 @@ class Colors{
 	@ElementCollection(targetClass=String.class)
 	private List<String> buttonLinkedin;
 	@ElementCollection(targetClass=String.class)
-	private List<String> buttonSelected;
+	@JsonProperty("buttonSelected")
+	private List<String> colorButtonSelected;
 	@ElementCollection(targetClass=String.class)
-	private List<String> buttonEnabled;
+	@JsonProperty("buttonEnabled")
+	private List<String> colorButtonEnabled;
 	@ElementCollection(targetClass=String.class)
-	private List<String> buttonDisabled;
+	@JsonProperty("buttonDisabled")
+	private List<String> colorButtonDisabled;
 	@ElementCollection(targetClass=String.class)
 	private List<String> buttonError;
 	
@@ -155,9 +160,9 @@ class Colors{
 		this.buttonTwitter = buttonTwitter;
 		this.buttonInstagram = buttonInstagram;
 		this.buttonLinkedin = buttonLinkedin;
-		this.buttonSelected = buttonSelected;
-		this.buttonEnabled = buttonEnabled;
-		this.buttonDisabled = buttonDisabled;
+		this.colorButtonSelected = buttonSelected;
+		this.colorButtonEnabled = buttonEnabled;
+		this.colorButtonDisabled = buttonDisabled;
 		this.buttonError = buttonError;
 	}
 	
