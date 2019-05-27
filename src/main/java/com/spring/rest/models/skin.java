@@ -30,6 +30,7 @@ public class skin {
 
 @Data
 class Partner{
+	@JsonProperty("id")
 	private String partnerid;
 	private String lang;
 	
