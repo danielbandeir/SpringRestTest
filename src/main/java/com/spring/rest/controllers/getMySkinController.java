@@ -31,9 +31,16 @@ public class getMySkinController {
 	}
 	
 	@PostMapping
-	Optional<skin> newSkin(@RequestBody getMySkin newSkin) {
-		repository.save(newSkin);
-		return repositorySkin.findById((long) 1);
+	skin newSkin(@RequestBody getMySkin newSkin) {
+		List<skin> all = repositorySkin.findAll();
+		if(all.isEmpty()) {
+			return null;
+		}
+		else {
+			repository.save(newSkin);
+			System.out.println(all.get(0));
+			return all.get(0);
+		}
 	}
 
 }
